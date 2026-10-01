@@ -1,132 +1,113 @@
-# Blog Project
+##Blog Project##
 
-A simple blog manager built with **React** and **Bootstrap**, using **json-server** as a mock REST API. You can add, edit and delete blog entries, and each one is shown as a card with its number, title, image, category and date. The UI uses a flat dark theme.
+A simple Blog Management System built using React JS, CSS,
+and JSON Server.
 
-## Features
+##Features
 
-- Add a new blog with number, title, image URL, category and date
-- Edit an existing blog (the form fills in automatically, with a Cancel option)
-- Delete a blog
-- Blog cards in a responsive grid (form on the left, cards on the right)
-- Flat dark theme with no gradients or glowing buttons
-- Full CRUD against a REST API (`GET`, `POST`, `PUT`, `DELETE`)
+Add a new blog
 
-## Tech Stack
+Display all blogs
 
-- React (Hooks: `useState`, `useEffect`)
-- Bootstrap 5 + custom CSS
-- json-server (mock backend)
-- Fetch API
+Edit existing blogs
 
-## Getting Started
+Delete blogs
 
-### Prerequisites
+Blog image using image URL
 
-- [Node.js](https://nodejs.org/) (v18 or newer recommended)
-- npm
+Blog category and date
 
-### Installation
+Responsive design for desktop, tablet, and mobile
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/mahidesai2119/blog_project.git
+Data stored using JSON Server REST API
 
-# 2. Go into the React app
-cd blog_project/my-react-project
+##Technologies Used
 
-# 3. Install dependencies
+React JS
+
+JavaScript
+
+CSS
+
+JSON Server
+
+Vite
+
+React Hooks 
+
+##Project Structure
+
+blog-project/
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── db.json
+├── index.html
+├── package.json
+└── README.md
+
+##How to Run the Project
+
+1. Install dependencies
+
 npm install
-```
 
-### Set up the mock API
+2. Start JSON Server
 
-Create a `db.json` file in the project folder:
+Open a terminal and run:
 
-```json
-{
-  "students": [
-    {
-      "id": "1",
-      "no": 1,
-      "title": "My First Blog",
-      "img": "https://picsum.photos/400/300",
-      "category": "Technology",
-      "date": "2026-09-01"
-    }
-  ]
-}
-```
+npx json-server --watch db.json --port 3000
 
-> The endpoint is named `students` because that is what `App.jsx` calls. If you rename it, update the `API` constant in `App.jsx` too.
+The API will run at:
 
-### Run the project
+http://localhost:3000/students
 
-You need two terminals.
+3. Start React
 
-**Terminal 1: start the API (port 3000)**
+Open another terminal and run:
 
-```bash
-npx json-server db.json --port 3000
-```
-
-**Terminal 2: start the React app**
-
-```bash
 npm run dev
-```
 
-Open the URL shown in the terminal (usually `http://localhost:5173`).
+Then open the Vite URL shown in the terminal, usually:
 
-## API Endpoints
+http://localhost:5173/
 
-Base URL: `http://localhost:3000/students`
+#API
 
-| Method | Endpoint        | Description         |
-| ------ | --------------- | ------------------- |
-| GET    | `/students`     | Get all blogs       |
-| POST   | `/students`     | Add a new blog      |
-| PUT    | `/students/:id` | Update a blog       |
-| DELETE | `/students/:id` | Delete a blog       |
+The project uses the following API endpoint:
 
-## Blog Object
+http://localhost:3000/students
 
-```json
-{
-  "no": 1,
-  "title": "Blog title",
-  "img": "https://example.com/image.jpg",
-  "category": "Technology",
-  "date": "2026-09-01"
-}
-```
+The students collection stores:
 
-## Project Structure
+id
 
-```
-blog_project/
-└── my-react-project/
-    ├── src/
-    │   ├── App.jsx      # Component with all CRUD logic and UI
-    │   ├── App.css      # Dark theme styles
-    │   └── main.jsx     # Entry point (imports Bootstrap)
-    ├── db.json          # Mock database for json-server
-    └── package.json
-```
+no
 
-## Troubleshooting
+title
 
-- **"Blog add nahi hua" alert or an empty list:** json-server is probably not running. Start it with `npx json-server db.json --port 3000`.
-- **Styles look unstyled:** make sure `import "bootstrap/dist/css/bootstrap.min.css";` is in `main.jsx` before your own CSS.
+img
 
-## Future Improvements
+category
 
-- Search and filter by category
-- Form validation messages instead of `alert()`
-- Pagination
-- Replace json-server with a real backend
+date
 
-## Author
+##How It Works
 
-**Mahi Desai**
-- GitHub: [@mahidesai2119](https://github.com/mahidesai2119)
-- LinkedIn: [Mahi Desai](https://www.linkedin.com/in/mahi-desai-2b69393a7)
+#Add Blog
+
+Enter the blog number, title, image URL, category, and date. Click Add
+Blog to save the blog to JSON Server.
+
+#Edit Blog
+
+Click the Edit button on any blog. The existing data will appear in
+the form. Make changes and click Update Blog.
+
+#Delete Blog
+
+Click the Delete button to remove a blog from JSON Server.
+
+Make sure JSON Server is running on port 3000 before using Add,
+Edit, or Delete operations.
